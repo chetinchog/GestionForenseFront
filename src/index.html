@@ -26,5 +26,28 @@
   <body>
     <div id="root"></div>
     <script src="index.pack.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyByg9FiEiYpkANyp9DWQEUn7nzNIo_K2xw",
+        authDomain: "gestionforense.firebaseapp.com",
+        databaseURL: "https://gestionforense.firebaseio.com",
+        projectId: "gestionforense",
+        storageBucket: "gestionforense.appspot.com",
+        messagingSenderId: "1068119328717",
+        appId: "1:1068119328717:web:43667e4b2422560bf96684",
+        measurementId: "G-FKS16XMZ72"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
   </body>
 </html>
