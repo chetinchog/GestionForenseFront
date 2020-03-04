@@ -29,7 +29,7 @@ const getListEvidence = async () => {
   await new Promise((resolve, reject) =>
     setTimeout(() => {
       resolve();
-    }, 1000)
+    }, 100)
   );
   return mockEvidences;
 };
@@ -38,7 +38,7 @@ const getEvidence = async id => {
   await new Promise((resolve, reject) =>
     setTimeout(() => {
       resolve();
-    }, 1000)
+    }, 100)
   );
   return mockEvidences.find(item => item._id.toString() === id.toString());
 };
