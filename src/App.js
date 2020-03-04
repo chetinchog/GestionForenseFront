@@ -1,28 +1,38 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./style.css";
 
-import LocalStorage from "./lib/localStorageLib";
+import SecurityManager from "./Managers/SecurityManager";
 
-import Home from "./components/Home";
+import TopBar from "./components/TopBar";
 import Login from "./components/Login";
+import Home from "./components/Home";
+import EvidenceTable from "./components/Evidences/EvidenceTable";
+import EvidenceView from "./components/Evidences/EvidenceView";
+import EvidenceNew from "./components/Evidences/EvidenceNew";
 
 function App() {
   return (
     <main>
+      {SecurityManager.getRol() && (
+        <TopBar
+          {...{
+            rol: SecurityManager.getRol(),
+            name: SecurityManager.getUserName()
+          }}
+        ></TopBar>
+      )}
       <Router>
-        {!LocalStorage.getRol() ? (
-          <Switch>
-            <Route component={Login} />
-          </Switch>
+        {!SecurityManager.getRol() ? (
+          <Route component={Login} />
         ) : (
           <Switch>
             <Route path="/" component={Home} exact />
             <Route path="/login" component={Login} exact />
+            <Route path="/evidences" component={EvidenceTable} exact />
+            <Route path="/evidences/new" component={EvidenceNew} exact />
+            <Route path="/evidences/view/:id" component={EvidenceView} exact />
           </Switch>
         )}
       </Router>

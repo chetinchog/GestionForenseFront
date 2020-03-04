@@ -1,8 +1,9 @@
 // const get = name => localStorage.getItem(name);
 
-const LocalStorage = {
+const SecurityManager = {
   //   getRol: () => get("rol")
+  getUserName: () => "Martin",
   getRol: () => "Perito"
 };
 
-export default LocalStorage;
+export default SecurityManager;
