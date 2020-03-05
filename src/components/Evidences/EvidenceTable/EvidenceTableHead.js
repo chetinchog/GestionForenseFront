@@ -4,7 +4,7 @@ function EvidencesTableHead() {
   return (
     <thead>
       <tr>
-        <th>Evidencia</th>
+        <th>Caso</th>
         <th>Estado</th>
         <th>Descripción</th>
         <th>Fecha de creación</th>

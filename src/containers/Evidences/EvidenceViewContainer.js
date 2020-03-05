@@ -6,11 +6,11 @@ import Loading from "../../components/Loading";
 
 class EvidenceViewContainer extends Component {
   state = {
-    ready: false,
-    evidence: []
+    ready: false
   };
 
   getEvidence = async id => {
+    if (this.state.evidence) return;
     const evidence = await EvidenceManager.getEvidence(id);
     this.setState({
       ready: true,
@@ -22,7 +22,9 @@ class EvidenceViewContainer extends Component {
     const { id } = this.props;
     this.getEvidence(id);
     if (this.state.ready)
-      return <EvidenceView {...{ evidence: this.state.evidence }}></EvidenceView>;
+      return (
+        <EvidenceView {...{ evidence: this.state.evidence }}></EvidenceView>
+      );
     else return <Loading></Loading>;
   }
 }

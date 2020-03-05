@@ -19,12 +19,10 @@ function EvidenceForm() {
           <Form.Control type="text" placeholder="Número de caso" />
         </Col>
       </Form.Group>
-
       <Form.Group controlId="description">
         <Form.Label>Descripción</Form.Label>
         <Form.Control as="textarea" rows="3" />
       </Form.Group>
-
       <Form.Group as={Row} controlId="formBasicCheckbox">
         <Form.Label column sm="1">
           Archivo
@@ -33,9 +31,11 @@ function EvidenceForm() {
           <Form.Control type="text" placeholder="foto1.png" />
         </Col>
       </Form.Group>
-
-      <Button variant="primary" type="submit">
+      {/* <Button variant="primary" type="submit">
         Guardar
+      </Button> */}
+      <Button variant="dark" disabled type="submit">
+        In progress...
       </Button>
     </Form>
   );

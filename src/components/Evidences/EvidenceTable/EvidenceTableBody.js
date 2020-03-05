@@ -5,7 +5,7 @@ import EvidenceTableRow from "./EvidenceTableRow";
 function EvidencesTableBody({ listEvidences }) {
   return (
     <tbody>
-      {listEvidences.map((evidence, i) => (
+      {listEvidences && listEvidences.map((evidence, i) => (
         <EvidenceTableRow key={i} {...{ evidence }}></EvidenceTableRow>
       ))}
       <EvidenceTableRow

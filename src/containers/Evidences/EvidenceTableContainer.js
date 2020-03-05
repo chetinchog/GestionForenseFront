@@ -6,22 +6,27 @@ import Loading from "../../components/Loading";
 
 class EvidenceTableContainer extends Component {
   state = {
-    ready: false,
-    listEvidences: []
+    ready: false
   };
 
   getListEvidence = async () => {
+    if (this.state.listEvidences) return;
     const listEvidences = await EvidenceManager.getListEvidence();
-    this.setState({
-      ready: true,
-      listEvidences
-    });
+    listEvidences &&
+      this.setState({
+        ready: true,
+        listEvidences
+      });
   };
 
   render() {
     this.getListEvidence();
     if (this.state.ready)
-      return <EvidenceTable {...{ listEvidences: this.state.listEvidences }}></EvidenceTable>;
+      return (
+        <EvidenceTable
+          {...{ listEvidences: this.state.listEvidences }}
+        ></EvidenceTable>
+      );
     else return <Loading></Loading>;
   }
 }

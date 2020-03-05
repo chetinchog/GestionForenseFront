@@ -13,8 +13,8 @@ function EvidencesTableRow({ evidence }) {
         {evidence.createdAt && moment(evidence.createdAt).format("DD/MM/YYYY")}
       </td>
       <td>
-        {evidence.modifiedAt &&
-          moment(evidence.modifiedAt).format("DD/MM/YYYY")}
+        {evidence.updatedAt &&
+          moment(evidence.updatedAt).format("DD/MM/YYYY")}
       </td>
       <td>
         <Button
