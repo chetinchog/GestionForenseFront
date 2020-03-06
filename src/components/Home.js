@@ -10,8 +10,15 @@ class Home extends Component {
       <Container>
         <Row>
           <Col>
-            <h1>Inicio</h1>
+            <h1>Sistema de Gestión Forense</h1>
           </Col>
+        </Row>
+        <Row>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
         </Row>
         <Row className="justify-content-md-center">
           <Col sm={3}>

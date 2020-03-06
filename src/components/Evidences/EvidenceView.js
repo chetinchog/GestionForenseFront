@@ -19,6 +19,7 @@ class EvidenceView extends Component {
         </Row>
         <Row>
           <Col>
+            <br></br>
             <Button
               variant="secondary"
               size="sm"

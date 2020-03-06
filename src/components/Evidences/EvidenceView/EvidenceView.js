@@ -59,13 +59,23 @@ function EvidenceView({ evidence }) {
                 <Col sm={11}>
                   <Row className="justify-content-md-center">
                     <Col sm={6}>
-                      <p>Caso: {number}</p>
-                      <p>Estado: {state}</p>
-                      <p>Descripción:</p>
-                      <p>{description}</p>
-                      <p>Creación: {moment(createdAt).format("DD/MM/YYYY")}</p>
                       <p>
-                        Actualización: {moment(updatedAt).format("DD/MM/YYYY")}
+                        Caso: <b>{number}</b>
+                      </p>
+                      <p>
+                        Estado: <b>{state}</b>
+                      </p>
+                      <p>Descripción:</p>
+                      <p>
+                        <b>{description}</b>
+                      </p>
+                      <p>
+                        Creación:{" "}
+                        <b>{moment(createdAt).format("DD/MM/YYYY")}</b>
+                      </p>
+                      <p>
+                        Actualización:{" "}
+                        <b>{moment(updatedAt).format("DD/MM/YYYY")}</b>
                       </p>
                     </Col>
                     <Col sm={6}>

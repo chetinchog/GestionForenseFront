@@ -16,6 +16,7 @@ class EvidenceNew extends Component {
         </Row>
         <Row>
           <Col>
+            <br></br>
             <Button
               variant="secondary"
               size="sm"
