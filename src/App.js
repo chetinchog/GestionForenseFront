@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./style.css";
 
-import SecurityManager from "./Managers/SecurityManager";
+import SecurityManager from "./managers/SecurityManager";
 
 import TopBar from "./components/TopBar";
 import Login from "./components/Login";

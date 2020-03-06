@@ -28,7 +28,7 @@ class EvidenceNew extends Component {
         <br></br>
         <Row className="justify-content-md-center">
           <Col sm={11}>
-            <EvidenceForm></EvidenceForm>
+            <EvidenceForm {...this.props}></EvidenceForm>
           </Col>
         </Row>
       </Container>

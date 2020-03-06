@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import EvidenceManager from "../../Managers/EvidenceManager";
+import EvidenceManager from "../../managers/EvidenceManager";
 import EvidenceView from "../../components/Evidences/EvidenceView/EvidenceView";
 import Loading from "../../components/Loading";
 

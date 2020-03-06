@@ -2,7 +2,7 @@ import React from "react";
 import moment from "moment";
 import { Button } from "react-bootstrap";
 
-import SecurityManager from "../../../Managers/SecurityManager";
+import SecurityManager from "../../../managers/SecurityManager";
 
 function EvidenceView({ evidence }) {
   return (
