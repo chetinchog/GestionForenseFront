@@ -6,7 +6,7 @@ import "./style.css";
 import SecurityManager from "./managers/SecurityManager";
 
 import TopBar from "./components/TopBar";
-import Login from "./components/Login";
+import Login from "./components/Security/Login";
 import Home from "./components/Home";
 import EvidenceTable from "./components/Evidences/EvidenceTable";
 import EvidenceView from "./components/Evidences/EvidenceView";
@@ -15,16 +15,14 @@ import EvidenceNew from "./components/Evidences/EvidenceNew";
 function App() {
   return (
     <main>
-      {SecurityManager.getRol() && (
-        <TopBar
-          {...{
-            rol: SecurityManager.getRol(),
-            name: SecurityManager.getUserName()
-          }}
-        ></TopBar>
-      )}
+      <TopBar
+        {...{
+          role: SecurityManager.getRole(),
+          name: SecurityManager.getUserName()
+        }}
+      ></TopBar>
       <Router>
-        {!SecurityManager.getRol() ? (
+        {!SecurityManager.getRole() ? (
           <Route component={Login} />
         ) : (
           <Switch>

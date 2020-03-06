@@ -18,14 +18,22 @@ class EvidenceViewContainer extends Component {
     });
   };
 
+  updateEvidence = async () => {
+    const evidence = await EvidenceManager.getEvidence(this.state.evidence._id);
+    this.setState({
+      ready: true,
+      evidence
+    });
+  };
+
   render() {
     const { id } = this.props;
     this.getEvidence(id);
-    if (this.state.ready)
-      return (
-        <EvidenceView {...{ evidence: this.state.evidence }}></EvidenceView>
-      );
-    else return <Loading></Loading>;
+    const { ready, evidence } = this.state;
+    if (ready && evidence) {
+      evidence.update = this.updateEvidence;
+      return <EvidenceView {...{ evidence }}></EvidenceView>;
+    } else return <Loading></Loading>;
   }
 }
 

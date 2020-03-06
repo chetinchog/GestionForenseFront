@@ -1,4 +1,4 @@
-import EvidenceManager from "../managers/EvidenceManager";
+import EvidenceManager from "../../managers/EvidenceManager";
 
 const newEvidence = async evidence =>
   new Promise(async (resolve, reject) => {

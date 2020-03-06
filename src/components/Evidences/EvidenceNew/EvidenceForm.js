@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Form, Button, Col, Row } from "react-bootstrap";
 
-import EvidenceFormHandler from "../../../forms/EvidenceFormHandler";
+import EvidenceFormHandler from "../../../forms/Evidence/EvidenceFormHandler";
 import Swal from "sweetalert2";
 
 class EvidenceForm extends Component {

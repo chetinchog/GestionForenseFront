@@ -22,7 +22,6 @@ class Home extends Component {
                 </blockquote>
               </Card>
             </Link>
-            {/* <Button onClick={e => this.route("/evidences")}>Ver Evidencias</Button> */}
           </Col>
         </Row>
       </Container>
