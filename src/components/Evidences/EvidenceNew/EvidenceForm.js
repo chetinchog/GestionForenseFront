@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Form, Button, Col, Row } from "react-bootstrap";
+import Swal from "sweetalert2";
 
 import EvidenceFormHandler from "../../../forms/Evidence/EvidenceFormHandler";
-import Swal from "sweetalert2";
 
 class EvidenceForm extends Component {
   state = {
@@ -23,6 +23,22 @@ class EvidenceForm extends Component {
     }));
   };
 
+  handleFile = async event => {
+    var file = event.target.files[0];
+    if (file.type.indexOf("image") === -1) {
+      Swal.fire({
+        title: "¡Ups!",
+        text: "Solo se permiten imágenes",
+        icon: "warning",
+        confirmButtonText: "Entendido"
+      });
+      return;
+    }
+    this.setState(({ evidence }) => ({
+      evidence: { ...evidence, image: file }
+    }));
+  };
+
   handleSubmit = async e => {
     try {
       this.setState({ buttonDisable: true });
@@ -38,7 +54,7 @@ class EvidenceForm extends Component {
       });
       this.route("/evidences");
     } catch (e) {
-      console.log("e", e)
+      console.log("e", e);
       Swal.fire({
         title: "¡Ups!",
         text: "No se ha podido cargar la evidencia",
@@ -52,16 +68,16 @@ class EvidenceForm extends Component {
 
   render() {
     const {
-      evidence: { number, description, image },
+      evidence: { number, description },
       buttonDisable
     } = this.state;
     return (
       <Form onSubmit={this.handleSubmit}>
         <Form.Group as={Row} controlId="number">
-          <Form.Label column sm="1">
+          <Form.Label column sm="2">
             Caso *
           </Form.Label>
-          <Col sm="11">
+          <Col sm="10">
             <Form.Control
               required
               type="text"
@@ -89,10 +105,9 @@ class EvidenceForm extends Component {
           <Col sm="10">
             <Form.Control
               required
-              type="text"
+              type="file"
               placeholder="Foto de la evidencia"
-              value={image}
-              onChange={this.handleOnChange}
+              onChange={this.handleFile}
             />
           </Col>
         </Form.Group>

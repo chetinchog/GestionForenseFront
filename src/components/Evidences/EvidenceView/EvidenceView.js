@@ -47,6 +47,7 @@ const handleApprovement = (evidence, state) => {
 };
 
 function EvidenceView({ evidence }) {
+  const { number, state, description, image, createdAt, updatedAt } = evidence;
   return (
     <Container>
       <Row className="justify-content-md-center">
@@ -56,23 +57,32 @@ function EvidenceView({ evidence }) {
             <Card.Body>
               <Row className="justify-content-md-center">
                 <Col sm={11}>
-                  <Row>
-                    <Col>
-                      <p>Caso: {evidence.number}</p>
-                      <p>Estado: {evidence.state}</p>
+                  <Row className="justify-content-md-center">
+                    <Col sm={6}>
+                      <p>Caso: {number}</p>
+                      <p>Estado: {state}</p>
                       <p>Descripción:</p>
-                      <p>{evidence.description}</p>
+                      <p>{description}</p>
+                      <p>Creación: {moment(createdAt).format("DD/MM/YYYY")}</p>
                       <p>
-                        Creación:{" "}
-                        {moment(evidence.createdAt).format("DD/MM/YYYY")}
-                      </p>
-                      <p>
-                        Actualización:{" "}
-                        {moment(evidence.updatedAt).format("DD/MM/YYYY")}
+                        Actualización: {moment(updatedAt).format("DD/MM/YYYY")}
                       </p>
                     </Col>
-                    <Col>
-                      <img alt="In progress..."></img>
+                    <Col sm={6}>
+                      <Row className="justify-content-md-center">
+                        <img
+                          className="img-responsive"
+                          src={image}
+                          alt={description}
+                          style={{
+                            position: "absolute",
+                            maxWidth: "600px",
+                            width: "100%",
+                            maxHeight: "220px",
+                            height: "100%"
+                          }}
+                        ></img>
+                      </Row>
                     </Col>
                   </Row>
                   {SecurityManager.getRole() === "Fiscal" && (
