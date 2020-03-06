@@ -33,7 +33,7 @@ class LoginForm extends Component {
           text: "Usuario y/o contraseña incorrectos",
           icon: "warning",
           confirmButtonText: "Entendido"
-        });
+        }).then(() => this.setState({ buttonDisable: false }));
     } catch (e) {
       console.log("e", e);
       Swal.fire({
@@ -41,8 +41,7 @@ class LoginForm extends Component {
         text: "Usuario y/o contraseña incorrectos",
         icon: "warning",
         confirmButtonText: "Entendido"
-      });
-      this.setState({ buttonDisable: false });
+      }).then(() => this.setState({ buttonDisable: false }));
     }
     return false;
   };
